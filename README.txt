@@ -1,28 +1,48 @@
-REMIX DEFAULT WORKSPACE
+#MyToken Contract
 
-Remix default workspace is present when:
-i. Remix loads for the very first time 
-ii. A new workspace is created with 'Default' template
-iii. There are no files existing in the File Explorer
+This Solidity contract is a basic implementation of a token contract named MyToken. It includes functionalities for minting new tokens and burning existing tokens.
 
-This workspace contains 3 directories:
+##License
 
-1. 'contracts': Holds three contracts with increasing levels of complexity.
-2. 'scripts': Contains four typescript files to deploy a contract. It is explained below.
-3. 'tests': Contains one Solidity test file for 'Ballot' contract & one JS test file for 'Storage' contract.
+This contract is licensed under the MIT License. See the SPDX-License-Identifier in the contract file for more details.
 
-SCRIPTS
+##Prerequisites
 
-The 'scripts' folder has four typescript files which help to deploy the 'Storage' contract using 'web3.js' and 'ethers.js' libraries.
+    Solidity compiler version 0.8.18 or higher
+    Ethereum development environment (e.g., Remix IDE, Truffle, etc.)
 
-For the deployment of any other contract, just update the contract's name from 'Storage' to the desired contract and provide constructor arguments accordingly 
-in the file `deploy_with_ethers.ts` or  `deploy_with_web3.ts`
+##Deployment
 
-In the 'tests' folder there is a script containing Mocha-Chai unit tests for 'Storage' contract.
+    Copy the contract code from MyToken.sol.
+    Compile the contract using a Solidity compiler compatible with version 0.8.18. and above.
+    Deploy the compiled contract to an Ethereum network of your choice.
 
-To run a script, right click on file name in the file explorer and click 'Run'. Remember, Solidity file must already be compiled.
-Output from script will appear in remix terminal.
+##Contract Details
 
-Please note, require/import is supported in a limited manner for Remix supported modules.
-For now, modules supported by Remix are ethers, web3, swarmgw, chai, multihashes, remix and hardhat only for hardhat.ethers object/plugin.
-For unsupported modules, an error like this will be thrown: '<module_name> module require is not supported by Remix IDE' will be shown.
+##Public Variables
+
+    tokenName: The name of the token, set to "OXEN".
+    tokenAbbrv: The abbreviation of the token, set to "OX".
+    totalSupply: The total supply of tokens, initially set to 0.
+
+##Mapping
+
+    balances: A mapping that stores the balances of addresses holding the tokens.
+
+##Mint Function
+
+    mint(address _address, uint256 _value): A function to mint new tokens and assign them to the specified address. It increases the total supply and the balance of the address.
+
+##Burn Function
+
+    burn(address _address, uint256 _value): A function to burn (destroy) existing tokens from the specified address. It reduces the total supply and the balance of the address, but only if the address has sufficient tokens to burn.
+
+##Usage
+
+    Deploy the contract to an Ethereum network.
+    Use the mint function to create new tokens and assign them to addresses.
+    Use the burn function to destroy tokens from addresses.
+
+##Contributing
+
+Contributions to this contract are welcome. Fork the repository, make your changes, and submit a pull request.
